@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Taste Hunter — Interactive Menu</title>
+<meta name="theme-color" content="#ff2b2b" />
+<style>
+:root{--brand:#ff2b2b;--soft:#f6f8fb;--ink:#222;--muted:#667085}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--soft);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.container{max-width:1000px;margin:0 auto;padding:16px}
+.header{display:flex;gap:12px;align-items:center;justify-content:space-between;background:linear-gradient(90deg, rgba(255,43,43,.08), rgba(255,43,43,.02));border-radius:16px;padding:14px 16px;margin-top:10px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand .logo{width:64px;height:64px;border-radius:12px;overflow:hidden;background:#fff;display:grid;place-items:center;border:1px solid #eee}
+.brand .logo img{width:100%;height:100%;object-fit:cover}
+.brand .ttl h1{margin:0;font-size:20px;color:var(--brand)}.brand .ttl p{margin:2px 0 0 0;font-size:12px;color:var(--muted)}
+.lang{display:flex;gap:8px;align-items:center}.lang button{background:#fff;border:2px solid transparent;border-radius:10px;padding:8px 10px;font-weight:700;cursor:pointer}.lang button.active{border-color:var(--brand);color:var(--brand)}
+.nav{display:flex;gap:8px;overflow:auto;padding:8px}.nav button{background:#fff;border:1px solid #eee;border-radius:999px;padding:10px 14px;font-weight:700;white-space:nowrap;cursor:pointer}
+.search{display:flex;gap:8px;margin:12px 0}.search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #e8e8e8;background:#fff}
+.grid{display:grid;gap:14px}
+.section{background:#fff;border-radius:14px;border:1px solid #eee;overflow:hidden}
+.section .head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;background:#fff}
+.section .head h2{margin:0;font-size:16px;color:var(--brand)}.section .head .arrow{transition:transform .25s ease}
+.items{display:grid;grid-template-columns:1fr;gap:12px;padding:0 12px 14px 12px;max-height:0;overflow:hidden;transition:max-height .4s ease}
+.card{display:grid;grid-template-columns:100px 1fr auto;gap:12px;align-items:center;padding:12px;border:1px dashed #eee;border-radius:12px;background:#fff}
+.card .photo{width:100px;height:80px;border-radius:10px;overflow:hidden;background:#f1f1f1}
+.card .photo img{width:100%;height:100%;object-fit:cover}
+.card .name{font-weight:800}.card .desc{font-size:12px;color:#555;margin-top:4px}
+.price{font-weight:900;color:#ff2b2b;text-align:right}
+.price .old{display:none;color:#888;text-decoration:line-through;font-weight:600;font-size:12px}
+.price.discount .old{display:block}
+.footerbar{position:sticky;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:saturate(1.2) blur(6px);border-top:1px solid #eee;padding:10px 12px;margin-top:10px;display:flex;gap:10px;align-items:center;justify-content:space-between;border-top-left-radius:10px;border-top-right-radius:10px}
+.toggle{display:flex;gap:8px;align-items:center}.toggle input{width:44px;height:24px;appearance:none;background:#ddd;border-radius:999px;position:relative;outline:none;cursor:pointer}
+.toggle input::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s ease}
+.toggle input:checked{background:#ff2b2b}.toggle input:checked::after{transform:translateX(20px)}
+.note{font-size:12px;color:#555}
+@media(min-width:760px){ .items{grid-template-columns:1fr 1fr} .card{grid-template-columns:140px 1fr auto} .card .photo{width:140px;height:100px} }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand">
+      <div class="logo"><img src="bistro.png" alt="Taste Hunter logo" /></div>
+      <div class="ttl">
+        <h1>Taste Hunter</h1>
+        <p id="tagline">Interactive QR Menu — Bilingual</p>
+      </div>
+    </div>
+    <div class="lang">
+      <button id="btn-en" class="active">🇬🇧 EN</button>
+      <button id="btn-ka">🇬🇪 KA</button>
+    </div>
+  </div>
+
+  <div class="nav" id="nav"></div>
+
+  <div class="search">
+    <input id="search" placeholder="Search dishes..." />
+  </div>
+
+  <div id="content" class="grid"></div>
+
+  <div class="footerbar">
+    <div class="toggle">
+      <input type="checkbox" id="studentToggle" />
+      <label for="studentToggle"><strong>🎓 Student Discount</strong> (40% off)</label>
+    </div>
+    <div class="note" id="discountNote">Off</div>
+  </div>
+</div>
+
+<script>
+let DATA = null, IMAGES = null, lang='en', discountOn=false;
+const t = (o)=> o ? (lang==='en' ? (o.en||'') : (o.ka||'')) : '';
+const gel = (v)=> (Math.round(v*100)/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' ₾';
+
+async function load(){
+  const [d,i] = await Promise.all([ fetch('data.json').then(r=>r.json()), fetch('images.json').then(r=>r.json()) ]);
+  DATA=d; IMAGES=i; renderNav(); render(); attach(); setLang('en');
+}
+
+function renderNav(){ const nav=document.getElementById('nav'); nav.innerHTML='';
+  DATA.categories.forEach(cat=>{ const b=document.createElement('button'); b.textContent=(cat.icon||'')+' '+t(cat.name);
+    b.addEventListener('click',()=>{ const sec=document.getElementById('sec-'+cat.id); if(!sec) return;
+      sec.scrollIntoView({behavior:'smooth',block:'start'}); const items=sec.querySelector('.items');
+      items.style.maxHeight = items.scrollHeight+'px'; sec.querySelector('.arrow').style.transform='rotate(180deg)'; });
+    nav.appendChild(b); });
+}
+
+function imgFor(key){ return IMAGES[key] && IMAGES[key].trim()!=='' ? IMAGES[key].trim() : 'placeholder.jpg'; }
+
+function card(item){
+  const d=document.createElement('div'); d.className='card';
+  const photo=document.createElement('div'); photo.className='photo';
+  const img=document.createElement('img'); img.loading='lazy'; img.alt=t(item.name);
+  img.src=imgFor(item.key); img.onerror=()=>{ img.src='placeholder.jpg'; }; photo.appendChild(img);
+  const mid=document.createElement('div'); const nm=document.createElement('div'); nm.className='name'; nm.textContent=t(item.name);
+  const ds=document.createElement('div'); ds.className='desc'; ds.textContent=t(item.desc); mid.appendChild(nm); if(t(item.desc)) mid.appendChild(ds);
+  const p=document.createElement('div'); p.className='price'; const old=document.createElement('div'); old.className='old'; const now=document.createElement('div');
+  const base=item.price||0; const disc=Math.round(base*0.6);
+  function setP(){ if(discountOn){ p.classList.add('discount'); old.textContent=gel(base); now.textContent=gel(disc); } else { p.classList.remove('discount'); old.textContent=''; now.textContent=gel(base); } }
+  setP(); p.appendChild(old); p.appendChild(now);
+  d.appendChild(photo); d.appendChild(mid); d.appendChild(p); return d;
+}
+
+function section(cat){
+  const sec=document.createElement('section'); sec.className='section'; sec.id='sec-'+cat.id;
+  const head=document.createElement('div'); head.className='head'; const h2=document.createElement('h2'); h2.textContent=(cat.icon||'')+' '+t(cat.name);
+  const arr=document.createElement('div'); arr.className='arrow'; arr.textContent='▼'; head.appendChild(h2); head.appendChild(arr);
+  const items=document.createElement('div'); items.className='items';
+  cat.items.forEach(it=> items.appendChild(card(it)));
+  head.addEventListener('click',()=>{ const open=items.style.maxHeight && items.style.maxHeight!=='0px';
+    if(open){ items.style.maxHeight='0'; arr.style.transform='rotate(0deg)'; } else { items.style.maxHeight=items.scrollHeight+'px'; arr.style.transform='rotate(180deg)'; } });
+  sec.appendChild(head); sec.appendChild(items); return sec;
+}
+
+function render(){ const root=document.getElementById('content'); root.innerHTML=''; DATA.categories.forEach(cat=> root.appendChild(section(cat)));
+  document.querySelectorAll('.items').forEach(i=> i.style.maxHeight='0');
+}
+function setLang(L){ lang=L; document.getElementById('btn-en').classList.toggle('active',lang==='en'); document.getElementById('btn-ka').classList.toggle('active',lang==='ka'); document.getElementById('tagline').textContent=(lang==='en')?'Interactive QR Menu — Bilingual':'ინტერაქტიული მენიუ — ორბाषა'; renderNav(); render(); }
+
+function attach(){
+  document.getElementById('btn-en').addEventListener('click',()=>setLang('en'));
+  document.getElementById('btn-ka').addEventListener('click',()=>setLang('ka'));
+  const input=document.getElementById('search'); input.addEventListener('input',()=>{ const q=input.value.trim().toLowerCase();
+    document.querySelectorAll('.card').forEach(c=>{ const n=c.querySelector('.name').textContent.toLowerCase(); const ds=(c.querySelector('.desc')?.textContent||'').toLowerCase(); c.style.display=(q===''||n.includes(q)||ds.includes(q))?'grid':'none'; }); });
+  const toggle=document.getElementById('studentToggle'); const note=document.getElementById('discountNote');
+  toggle.addEventListener('change',()=>{ discountOn=toggle.checked; note.textContent=discountOn?(lang==='en'?'ON — 40% off':'ჩართულია — 40% ფასდაკლება'):(lang==='en'?'Off':'გამორთულია'); render(); });
+}
+
+load();
+</script>
+</body>
+</html>
