@@ -193,7 +193,15 @@
         "en": "Quick Bites",
         "ka": "სწრაფი ხემსი"
       },
-      "items": [
+      "items": [ 
+        {
+          "key": "french_fries",
+          "name": {
+            "en": "fries, cocktail sauce",
+            "ka": "კარტოფილი ფრი, კოქტეილ სოუსი"
+          },
+          "price": 8
+        },
         {
           "key": "fries_croquettes",
           "name": {
