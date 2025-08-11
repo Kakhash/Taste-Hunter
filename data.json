@@ -206,30 +206,8 @@
           },
           "price": 17
         },
-        {
-          "key": "lobiani_black",
-          "name": {
-            "en": "Lobiani (Black Dough) with Jalapeño Filling",
-            "ka": "ლობიანი (შავი ცომი) ჰალაპენიოს შიგთავსით"
-          },
-          "desc": {
-            "en": "Bean filling, butter, jalapeño",
-            "ka": "ლობიოს გულსართი, კარაქი, ჰალაპენიო"
-          },
-          "price": 17
-        },
-        {
-          "key": "lazuri_black",
-          "name": {
-            "en": "Lazuri Khachapuri (Black Dough) with Mint",
-            "ka": "ლაზური ხაჭაპური (შავი ცომი) პიტნიანი გულსართით"
-          },
-          "desc": {
-            "en": "Egg, Imeretian cheese, sulguni, mozzarella, butter",
-            "ka": "კვერცხი, იმერული ყველი, სულუგუნი, მოცარელა, კარაქი"
-          },
-          "price": 25
-        }
+        
+       
       ]
     },
     {
@@ -251,6 +229,30 @@
             "ka": "იმერული ყველი, სულუგუნი, მოცარელა"
           },
           "price": 22
+        },
+        {
+          "key": "lobiani_black",
+          "name": {
+            "en": "Lobiani (Black Dough) with Jalapeño Filling",
+            "ka": "ლობიანი (შავი ცომი) ჰალაპენიოს შიგთავსით"
+          },
+          "desc": {
+            "en": "Bean filling, butter, jalapeño",
+            "ka": "ლობიოს გულსართი, კარაქი, ჰალაპენიო"
+          },
+          "price": 17
+        },
+         {
+          "key": "lazuri_black",
+          "name": {
+            "en": "Lazuri Khachapuri (Black Dough) with Mint",
+            "ka": "ლაზური ხაჭაპური (შავი ცომი) პიტნიანი გულსართით"
+          },
+          "desc": {
+            "en": "Egg, Imeretian cheese, sulguni, mozzarella, butter",
+            "ka": "კვერცხი, იმერული ყველი, სულუგუნი, მოცარელა, კარაქი"
+          },
+          "price": 25
         }
       ]
     },
