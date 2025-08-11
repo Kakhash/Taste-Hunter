@@ -18,7 +18,7 @@
             "en": "Pepperoni, tomato sauce, mozzarella, parmesan, arugula",
             "ka": "პიცის სოუსი, სალიამი, მოცარელა, პარმეზანი, რუკოლა"
           },
-          "price": 27
+          "price": 30
         },
         {
           "key": "margherita_pizza",
@@ -30,7 +30,7 @@
             "en": "Tomato, arugula, mozzarella, parmesan",
             "ka": "პომიდორი, რუკოლა, მოცარელა, პარმეზანი"
           },
-          "price": 25
+          "price": 28
         },
         {
           "key": "four_cheese_pizza",
@@ -42,7 +42,7 @@
             "en": "Tomato sauce, gorgonzola, mozzarella, edam, cheddar, arugula",
             "ka": "პიცის სოუსი, გორგონზოლა, მოცარელა, ედამი, ჩედარი, რუკოლა"
           },
-          "price": 29
+          "price": 32
         }
       ]
     },
@@ -64,7 +64,7 @@
             "en": "Brioche bun, cheese sauce, beef, pork",
             "ka": "ბრიოშის ფუნთუშა, ყველის სოუსი, საქონლის ხორცი, ღორის ხორცი"
           },
-          "price": 27
+          "price": 30
         },
         {
           "key": "caprese_focaccia",
@@ -76,7 +76,7 @@
             "en": "Mozzarella, pesto, tomato, arugula",
             "ka": "მოცარელა, პესტოს სოუსი, პომიდორი, რუკოლა"
           },
-          "price": 23
+          "price": 26
         },
         {
           "key": "focaccia_ham_cheese",
@@ -88,7 +88,7 @@
             "en": "Chimichurri sauce, bacon, ham, cheese sauce",
             "ka": "ჩიმიჩურის სოუსი, ბეკონი, ლორი, ყველის სოუსი"
           },
-          "price": 22
+          "price": 25
         },
         {
           "key": "panuozzo",
@@ -100,7 +100,7 @@
             "en": "Olive oil, tomato sauce, parmesan, green apple, mozzarella, salami, ham",
             "ka": "ზეითუნის ზეთი, პომიდვრის სოუსი, პარმეზანი, მწვანე ვაშლი, მოცარელა, სალიამი, ლორი"
           },
-          "price": 23
+          "price": 26
         },
         {
           "key": "club_sandwich",
@@ -112,7 +112,7 @@
             "en": "Brioche toast, glaze, chicken, bacon, cheddar",
             "ka": "ბრიოშის ტოსტი, გლაზური, ქათმის ხორცი, ბეკონი, ჩედარი"
           },
-          "price": 21
+          "price": 24
         },
         {
           "key": "hot_dog",
@@ -124,7 +124,7 @@
             "en": "Homemade bun, sausage, sauce, cheese",
             "ka": "ადგილზე მომზადებული ფუნთუშა, სოსისი, სოუსი, ყველი"
           },
-          "price": 12
+          "price": 14
         },
         {
           "key": "veg_burger",
@@ -136,7 +136,7 @@
             "en": "Brioche bun, red beans, chickpeas, caramelized onion, mozzarella",
             "ka": "ბრიოშის ფუნთუშა, წითელი ლობიო, მუხუდო, კარამელიზირებული ხახვი, მოცარელა"
           },
-          "price": 21
+          "price": 24
         }
       ]
     },
@@ -158,7 +158,7 @@
             "en": "Special dressing, grapefruit & orange slices, feta",
             "ka": "სპეც სოუსი, გრეიფრუტისა და ფორთოხლის ლებნები, ფეტა ყველი"
           },
-          "price": 27
+          "price": 29
         },
         {
           "key": "fresh_salad",
@@ -170,7 +170,7 @@
             "en": "Mixed greens, orange sauce, avocado, arugula, grains",
             "ka": "სალათის ფოთლები, ფორთოხლის სოუსი, ავოკადო, რუკოლა, მარცვლეული"
           },
-          "price": 25
+          "price": 27
         },
         {
           "key": "chicken_salad",
@@ -182,7 +182,7 @@
             "en": "Grilled chicken fillet, teriyaki sauce, mixed greens, almond flakes",
             "ka": "გამომცხვარი ქათმის ფილე, ტერიაკის სოუსი, სალათის ფოთლები, ნუშის ფანტელი"
           },
-          "price": 25
+          "price": 27
         }
       ]
     },
@@ -204,7 +204,7 @@
             "en": "Crispy fries, croquettes, cheese sauce",
             "ka": "ქრისპი ფრი, ქათმის კროკეტები, ყველის სოუსი"
           },
-          "price": 15
+          "price": 17
         },
         {
           "key": "lobiani_black",
@@ -216,7 +216,7 @@
             "en": "Bean filling, butter, jalapeño",
             "ka": "ლობიოს გულსართი, კარაქი, ჰალაპენიო"
           },
-          "price": 15
+          "price": 17
         },
         {
           "key": "lazuri_black",
@@ -228,7 +228,7 @@
             "en": "Egg, Imeretian cheese, sulguni, mozzarella, butter",
             "ka": "კვერცხი, იმერული ყველი, სულუგუნი, მოცარელა, კარაქი"
           },
-          "price": 23
+          "price": 25
         }
       ]
     },
@@ -250,7 +250,7 @@
             "en": "Imeretian cheese, sulguni, mozzarella",
             "ka": "იმერული ყველი, სულუგუნი, მოცარელა"
           },
-          "price": 20
+          "price": 22
         }
       ]
     },
@@ -268,7 +268,7 @@
             "en": "San Sebastian Cheesecake (Cherry Sauce)",
             "ka": "ჩიზქეიქი სანსებასტიანი (ალუბლის სოუსით)"
           },
-          "price": 15
+          "price": 17
         },
         {
           "key": "brownie",
@@ -386,7 +386,7 @@
             "en": "Chocolate powder, milk",
             "ka": "ცხელი შოკოლადის ფხვნილი, რძე"
           },
-          "price": 12
+          "price": 10
         },
         {
           "key": "water",
@@ -394,7 +394,7 @@
             "en": "Mountain Water 1.5L",
             "ka": "მთის წყალი 1.5"
           },
-          "price": 3
+          "price": 1.5
         },
         {
           "key": "coke",
@@ -434,13 +434,13 @@
           "key": "combo_burger",
           "name": {
             "en": "Classic Burger Combo",
-            "ka": "კლასიკური ბურგერის სეტი"
+            "ka": "კლასიკური ბურგერის კომბო"
           },
           "desc": {
             "en": "Classic Burger + Fries + Cocktail Sauce + Soft Drink",
             "ka": "კლასიკური ბურგერი + კარტოფილი ფრი + კოქტეილის სოუსი + გაზიანი სასმელი"
           },
-          "price": 32
+          "price": 35
         },
         {
           "key": "combo_veg",
@@ -452,67 +452,67 @@
             "en": "Veg Burger + Fries + Cocktail Sauce + Soft Drink",
             "ka": "ვეგეტარიანული ბურგერი + ფრი + კოქტეილის სოუსი + გაზიანი"
           },
-          "price": 28
+          "price": 29
         },
         {
           "key": "combo_caprese",
           "name": {
             "en": "Caprese Sandwich Combo",
-            "ka": "კაპრეზე სენდვიჩის სეტი"
+            "ka": "კაპრეზე სენდვიჩის კომბო"
           },
           "desc": {
             "en": "Caprese Sandwich + Fries + Cocktail Sauce + Soft Drink",
             "ka": "კაპრეზე სენდვიჩი + ფრი + კოქტეილ სოუსი + გაზიანი"
           },
-          "price": 26
+          "price": 32
         },
         {
           "key": "combo_focaccia",
           "name": {
             "en": "Focaccia (Ham & Cheese) Combo",
-            "ka": "ფოკაჩას (ლორი & ყველი) სეტი"
+            "ka": "ფოკაჩას (ლორი & ყველი) კომბო"
           },
           "desc": {
             "en": "Focaccia (Ham & Cheese) + Fries + Sauce + Soft Drink",
             "ka": "ფოკაჩა (ლორი და ყველი) + ფრი + სოუსი + გაზიანი"
           },
-          "price": 27
+          "price": 31
         },
         {
           "key": "combo_panuozzo",
           "name": {
             "en": "Panuozzo Combo",
-            "ka": "პანუოცო სეტი"
+            "ka": "პანუოცო კომბო"
           },
           "desc": {
             "en": "Panuozzo + Fries + Cocktail Sauce + Soft Drink",
             "ka": "პანუოცო + ფრი + კოქტეილის სოუსი + გაზიანი"
           },
-          "price": 28
+          "price": 32
         },
         {
           "key": "combo_club",
           "name": {
             "en": "Club Sandwich Combo",
-            "ka": "ქლაბ სენდვიჩის სეტი"
+            "ka": "ქლაბ სენდვიჩის კომბო"
           },
           "desc": {
             "en": "Club Sandwich + Fries + Cocktail Sauce + Soft Drink",
             "ka": "ქლაბ სენდვიჩი + ფრი + კოქტეილის სოუსი + გაზიანი"
           },
-          "price": 26
+          "price": 30
         },
         {
           "key": "combo_hotdog",
           "name": {
             "en": "Hot Dog Combo",
-            "ka": "ჰოთდოგის სეტი"
+            "ka": "ჰოთდოგის კომბო"
           },
           "desc": {
             "en": "Hot Dog + Fries + Soft Drink",
             "ka": "ჰოთდოგი + ფრი + გაზიანი"
           },
-          "price": 18
+          "price": 20
         }
       ]
     },
@@ -530,7 +530,7 @@
             "en": "Veg Caprese (Focaccia) + Mini Salad + Coffee/Tea",
             "ka": "ვეგეტარიანული კაპრეზე (ფოკაჩა) + მინი სალათი + ყავა/ჩაი"
           },
-          "price": 32
+          "price": 35
         },
         {
           "key": "breakfast_focaccia",
@@ -538,7 +538,7 @@
             "en": "Focaccia (Ham & Cheese) + Mini Salad + Coffee/Tea",
             "ka": "ფოკაჩა (ლორი და ყველი) + მინი სალათი + ყავა/ჩაი"
           },
-          "price": 32
+          "price": 35
         },
         {
           "key": "breakfast_panuozzo",
@@ -546,7 +546,7 @@
             "en": "Panuozzo + Mini Salad + Coffee/Tea",
             "ka": "პანუოცო + მინი სალათი + ყავა/ჩაი"
           },
-          "price": 32
+          "price": 35
         },
         {
           "key": "breakfast_club",
@@ -554,7 +554,7 @@
             "en": "Club Sandwich + Mini Salad + Coffee/Tea",
             "ka": "ქლაბ სენდვიჩი + მინი სალათი + ყავა/ჩაი"
           },
-          "price": 32
+          "price": 35
         },
         {
           "key": "breakfast_hotdog",
@@ -562,7 +562,7 @@
             "en": "Hot Dog + Mini Salad + Coffee/Tea",
             "ka": "ჰოთდოგი + მინი სალათი + ყავა/ჩაი"
           },
-          "price": 20
+          "price": 22
         }
       ]
     }
