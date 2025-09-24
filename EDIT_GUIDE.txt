@@ -1,0 +1,21 @@
+
+EDIT GUIDE (super quick)
+------------------------
+1) Open data.json to change text or prices.
+   - Find the item by its "key".
+   - Edit "price" or the names/descriptions under name.en/name.ka and desc.en/desc.ka.
+
+2) Open images.json to add photos.
+   - For each key, paste a PUBLIC image URL. Example:
+     "pepperoni_pizza": "https://example.com/pepperoni.jpg"
+   - If empty, the site uses placeholder.jpg automatically.
+
+3) Add new product:
+   - Find the right category in data.json, copy one item, change "key", names, and price.
+   - Keep the "key" unique and short (letters, numbers, underscore).
+
+4) Add new category:
+   - Copy a full category block, set a new "id" and "name", then add items.
+
+5) Student discount:
+   - The toggle on the page shows -40% prices live. No edits needed.
